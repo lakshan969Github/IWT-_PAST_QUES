@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <input type="text" id="inputText1"><br>
+  <input type="text" id="inputText2"><br>
+  <input type="button" value="draw table" onclick="drawTable()">
+  <script>
+
+    function drawTable(){
+      var num1=document.getElementById("inputText1").value;
+      var num2=document.getElementById("inputText2").value;
+      num1=parseInt(num1);
+      num2=parseInt(num2);
+      document.write("<table border='5'>");
+      for(var i = 1; i <= num1; i++){
+        document.write(" <tr> ");
+        for(var j = 1; j <= num2; j++){
+          document.write("<td>" + j);
+          document.write("</td>");
+        }
+        document.write("</tr>");
+      }
+      document. write("</table>");
+    }
+    
+  </script>
+  
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+</body>
+
+</html>
