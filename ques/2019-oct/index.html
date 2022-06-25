@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.form-content{
+			width: 400px;
+			margin:2rem auto;
+		}
+	</style>
+</head>
+<body>
+	<form action="./insert.php" method="post" class="form-content">
+		<fieldset>
+			<legend>Customer Details</legend>
+			<label for="Customer name">Customer Name: </label>
+			<br>
+			<input type="text" name="cusName" class="inData">
+			<br>
+			<label for="Customer Phone">Phone Number: </label>
+			<br>
+			<input type="text" name="cusPhone" class="inData">
+			<br>
+			<label for="Customer Email">Email: </label>
+			<br>
+			<input type="email" name="cusEmail" class="inData">
+			<br>
+			<label for="Customer address">Pick up Address: </label>
+			<br>
+			<textarea cols="30" rows="10" name="cusAddress"></textarea>
+			<br>
+		</fieldset>
+		<fieldset>
+			<legend>Vehicle Details</legend>
+			<label for="Vehicle Type">Vehicle Type</label>
+			<br>
+			<select name="vType" id="vType">
+				<option value="Car">Car</option>
+				<option value="Van">Van</option>
+				<option value="Bus">Bus</option>
+			</select>
+			<br>
+			<label for="vType">Air Condition</label>
+			<br>
+			<input type="radio" name="ac" value="With Air"> <span>With Air</span>
+			<input type="radio" name="ac" value="Without Air"> <span>Without Air</span>
+			<br>
+			<label for="vType">Tour Staff</label>
+			<br>
+			<input type="radio" name="ts" value="Yes"> <span>Yes</span>
+			<input type="radio" name="ts" value="No"> <span>No</span>
+		</fieldset>
+		<fieldset>
+			<legend>Date Details</legend>
+			<label for="Start Date">Start Date</label>
+			<input type="date" name="sDate">
+			<br>
+			<label for="End Date">End Date</label>
+			<input type="date" name="eDate">
+			<br>
+			<button name="submit">Submit</button>
+		</fieldset>
+	</form>
+</body>
+</html>

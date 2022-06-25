@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="inText">
+	<br><br>
+	<button id="btn" onclick="textConvertor('a-z')">a-z</button>
+	<button id="btn" onclick="textConvertor('A-Z')">A-Z</button>
+	<button id="btn" onclick="textConvertor('length')">Length</button>
+	<button id="btn" onclick="getNum()">Digits</button>
+	<br><br>
+	<p id="result"></p>
+	<script type="text/javascript">
+		function textConvertor(op){
+			var result = "";
+			var text = document.getElementById("inText").value;
+
+			switch (op){
+				case 'a-z':
+					result = text.toLowerCase();
+					break;
+				case 'A-Z':
+					result = text.toUpperCase();
+					break;
+				case 'length':
+					result = text.length;
+					break;
+			};
+
+			document.getElementById('result').innerHTML = result;
+
+		};
+
+		function getNum(){
+			var result = "";
+			var text = document.getElementById("inText").value;
+			document.getElementById("result").innerHTML = "";
+			for(let x = 0; x <text.length; x++){
+				if((isNaN(text[x])) === false){
+					result = result.concat(text[x]); 
+				}
+			}
+			document.getElementById("result").innerHTML = result;
+		}
+
+	</script>
+</body>
+</html>
