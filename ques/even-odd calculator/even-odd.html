@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1{
+      text-align: center;
+    }
+
+    .inputs, #result{
+      width: 500px;
+      margin:2rem auto;
+      border:2px solid #000;
+      padding:1rem;
+    }
+
+    #result{
+      display:none;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Even Odd Calculator</h1>
+  <div class="inputs">
+    <label for="">Start Number</label><br>
+    <input type="text" name="" id="in1"><br><br>
+    <label for="">End Number</label><br>
+    <input type="text" name="" id="in2"><br><br>
+    <button onclick="sumCalculate()">Calculate</button>
+  </div>
+  <br><br>
+  <div id="result"></div>
+  <script type="text/javascript">
+    
+    function sumCalculate(){
+      const in1 = document.getElementById("in1").value;
+      const in2 = document.getElementById("in2").value;
+      const result = document.getElementById("result");
+      
+      // alert(parseInt(in1) + parseInt(in2));
+
+      let evenArr = [];
+      let oddArr = [];
+      let evenSum = 0;
+      let oddSum = 0;
+
+
+      for(let x = parseInt(in1); x <= parseInt(in2); x++){
+        const save = x % 2;
+
+        if(save == 0){
+          evenArr.push(x);
+          evenSum += x;
+        }else{
+          oddArr.push(x);
+          oddSum += x;
+        }
+
+      }
+
+      result.style.display = 'block';
+
+      result.insertAdjacentHTML('beforeend', `<h3>The even numbers from ` + in1 + " to " + in2 + " : " + evenArr + `</h3>`);
+
+      result.insertAdjacentHTML('beforeend', `<h3>The sum of Even numbers: ` + evenSum + `</h3>`);
+
+      result.insertAdjacentHTML('beforeend', `<h3>The Odd numbers from ` + in1 + " to " + in2 + " : " + oddArr + `</h3>`);
+
+      result.insertAdjacentHTML('beforeend', `<h3>The sum of Odd numbers: ` + oddSum + `</h3>`);
+
+    }
+
+  </script>
+</body>
+</html>

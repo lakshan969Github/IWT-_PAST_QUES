@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Text Convertor</h3>
+    <input type="text" id="inText">
+    <br><br>
+    <button type="button" id="a-z" onclick="TextConvertor('a-z')">Convert to Simple</button>
+    <button type="button" id="A-Z" onclick="TextConvertor('A-Z')">Convert to Capital</button>
+    <button type="button" id="length" onclick="TextConvertor('length')">String Length</button>
+    <button type="button" id="0-9" onclick="GetNum()">Digits Only</button>
+    <p id="result"></p>
+    <script>
+        function TextConvertor(op){
+            var result = "";
+            var text = "";
+            text = document.getElementById("inText").value;
+            switch(op){
+                case 'a-z':
+                    result = text.toLowerCase();
+                    break;
+                case 'A-Z':
+                    result = text.toUpperCase();
+                    break;
+                case 'length':
+                    result = text.length;
+                    break;
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+
+        function GetNum(){
+            var text = "";
+            var result2="";
+            text = document.getElementById("inText").value; 
+            document.getElementById("result").innerHTML = "";
+            var i;
+            for(i = 0; i < text.length; i++){
+                if((isNaN(text[i])) === false){
+                    result2 = result2.concat(text[i]);
+                }
+            }
+            document.getElementById("result").innerHTML = result2;
+        }
+    </script>
+</body>
+</html>

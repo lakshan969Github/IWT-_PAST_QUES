@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.inputs{
+			max-width: 500px;
+			margin:100px auto;
+			border:2px solid #000;
+			padding: 3rem;
+		}
+		#result{
+			max-width: 200px;
+			border:2px solid #000;
+			margin:100px auto;
+			padding:3rem;
+			text-align: center;
+			font-size:30px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="inputs">
+		<label>Input number 01</label>
+		<input type="text" id="in-01">
+		<br><br>
+		<label>Input number 02</label>
+		<input type="text" id="in-02">
+		<br><br>
+		<div class="btn-section">
+			<button id="btn" data-btn="add">+</button>
+			<button id="btn" data-btn="sub">-</button>
+			<button id="btn" data-btn="mul">*</button>
+			<button id="btn" data-btn="div">/</button>
+		</div>
+	</div>
+	<div id="result"></div>
+	<script>
+		const btns = document.querySelectorAll("#btn");
+		
+		btns.forEach(btn =>{
+			btn.addEventListener("click", function(){
+				const in1 = document.getElementById("in-01").value;
+				const in2 = document.getElementById("in-02").value;
+				const result = document.getElementById("result");
+				result.style.display = "block";
+
+				const btnVal = btn.dataset.btn;
+
+				switch(btnVal){
+					case "add":
+						result.innerHTML = parseInt(in1) + parseInt(in2);
+						break;
+					case "sub":
+						result.innerHTML = parseInt(in1) - parseInt(in2);
+						break;
+					case "mul":
+						result.innerHTML = parseInt(in1) * parseInt(in2);
+						break;
+					case "div":
+						result.innerHTML = parseFloat(in1) / parseFloat(in2);
+						break;
+				}
+			});
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .success{
+            background-color:green;
+        }
+        .info{
+            background-color:pink;
+        }
+        .warning{
+            background-color:orange;
+        }
+        .danger{
+            background-color:red;
+        }
+    </style>
+    <script>
+        function changeBGColor(n){
+            switch(n){
+                case "green":
+                    document.body.style.backgroundColor = "green";
+                    break;
+                case "pink":
+                    document.body.style.backgroundColor = "pink";
+                    break;
+                case "orange":
+                    document.body.style.backgroundColor = "orange";
+                    break;
+                case "red":
+                    document.body.style.backgroundColor = "red";
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="success">
+        <button name="green" onclick="changeBGColor(name)">Success</button>
+        <h1>Success</h1>
+    </div>
+    <div class="info">
+        <button name="pink" onclick="changeBGColor(name)">Info</button>
+        <h1>Info</h1>
+    </div>
+    <div class="warning">
+        <button name="orange" onclick="changeBGColor(name)">Warning</button>
+        <h1>Warning</h1>
+    </div>
+    <div class="danger">
+        <button name="red" onclick="changeBGColor(name)">Danger</button>
+        <h1>Danger</h1>
+    </div>
+</body>
+</html>

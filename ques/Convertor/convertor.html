@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		h1{
+			text-align: center;
+		}
+		.coner{
+			max-width:500px;
+			border:3px solid #000;
+			margin:40px auto;
+			padding:3rem;
+		}
+	</style>
+</head>
+<body>
+	<h1>Milimeters to meters conversion</h1>
+	<br><br>
+	<div class="coner">
+		<label>Milimeters</label>
+		<input type="text" id="in1" class="in" onclick="act2()">
+		<br><br>
+		<label>Meters</label>
+		<input type="text" id="in2" class="in" onclick="act1()" value="">
+		<br><br>
+	</div>
+	<script>
+		
+
+		function act1(){
+			const i1 = document.getElementById("in1");
+			if(!(i1.value == '')){
+				const calc = parseFloat(i1.value) / 1000;
+				const i2 = document.getElementById("in2").value = calc;
+			}
+		}
+
+
+		function act2(){
+			const i2 = document.getElementById("in2");
+			if(!(i2.value == '')){
+				const calc = parseFloat(i2.value)* 1000;
+				const i1 = document.getElementById("in1").value = calc;
+			}
+		}
+
+	</script>
+</body>
+</html>
